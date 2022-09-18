@@ -5,7 +5,15 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "if-env NODE_ENV=production && npm run prod || npm run dev",
+    "prod": "node server.js",
+    "dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "seed": "node seeds/blogSeeds.js",
+    "heroku-postbuild": "npm run build",
+    "lint": "eslint . --ext .js,.jsx"
   },
   "repository": {
     "type": "git",
@@ -25,5 +33,15 @@
     "if-env": "^1.0.4",
     "mongoose": "^6.6.1",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "concurrently": "^7.4.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "mocha": "^10.0.0",
+    "prettier": "^2.7.1"
   }
 }
