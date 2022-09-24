@@ -9,7 +9,8 @@ import Contact from "./components/Contact/Contact";
 import SiteMap from "./components/SiteMap/SiteMap";
 import SideNav from "./components/SideNav/SideNav";
 import CountDown from "./components/CountDown/CountDown";
-
+import Loading from "./components/Loading/Loading"
+import Reload from "./components/Reload/Reload"
 // import NotFound from "./containers/NotFound/NotFound";
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
           <SideNav />
         </div>
         <div className="col-sm-8">
+        <Loading/>
+        <Reload/>
           <Routes>
             <Route exact path="/Contact" element={<Contact />} />
             <Route exact path="/" element={<Home />} />
