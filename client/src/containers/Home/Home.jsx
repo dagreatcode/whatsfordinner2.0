@@ -51,6 +51,7 @@ export default function Home() {
           <div className="col-sm-4">
             <h1>-</h1>
           </div>
+          <h2>Here are a few Diet Recipes</h2>
           {foods.length ? (
             foods.slice(0, 5).map((food) => {
               return (
