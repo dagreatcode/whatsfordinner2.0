@@ -2,6 +2,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import axios from "axios";
 import Home from "./containers/Home/Home";
+import NotFound from "./containers/NotFound/NotFound";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Banner from "./components/Banner/Banner";
@@ -9,8 +10,8 @@ import Contact from "./components/Contact/Contact";
 import SiteMap from "./components/SiteMap/SiteMap";
 import SideNav from "./components/SideNav/SideNav";
 import CountDown from "./components/CountDown/CountDown";
-import Loading from "./components/Loading/Loading"
-import Reload from "./components/Reload/Reload"
+// import Loading from "./components/Loading/Loading"
+// import Reload from "./components/Reload/Reload"
 // import NotFound from "./containers/NotFound/NotFound";
 
 function App() {
@@ -23,11 +24,12 @@ function App() {
           <SideNav />
         </div>
         <div className="col-sm-8">
-        <Loading/>
-        <Reload/>
+        {/* <Loading/> */}
+        {/* <Reload/> */}
           <Routes>
             <Route exact path="/Contact" element={<Contact />} />
             <Route exact path="/" element={<Home />} />
+            <Route exact path="*" element={<NotFound />} />
           </Routes>
         </div>
         <div className="col-sm-2 card">
