@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // mongoose.connect(
-// 	process.env.MONGODB_URI || "mongodb://localhost/whereintheworld_db",
+// 	process.env.MONGODB_URI || "mongodb://localhost/whatsForDinner_db",
 // 	{
 // 		useNewUrlParser: true,
 // 		useUnifiedTopology: true,
