@@ -5,6 +5,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const mongoose = require("mongoose");
 const products = require("./data/AllProducts");
+// const { default: connectDatabase } = require("./config/MongoDB");
+
 // (For Heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -13,6 +15,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// connectDatabase();
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/whatsForDinner_db",
   {
@@ -44,9 +47,9 @@ app.get("/api/products", (req, res) => {
   res.json(products);
 });
 app.get("/api/products/:id", (req, res) => {
-	const product = products.find((p) => p._id === req.params.id)
-	res.json(product);
-  });
+  const product = products.find((p) => p._id === req.params.id);
+  res.json(product);
+});
 app.get("/apiFun", (req, res) => {
   res.send("API FUN");
   var adminUser = req.params.apiFun;

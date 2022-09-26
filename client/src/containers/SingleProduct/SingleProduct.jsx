@@ -1,7 +1,18 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Ratings from "../../components/ShopSection/Ratings";
+import axios from "axios"
 
-function SingleProduct() {
+function SingleProduct({match}) {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get(`/api/products/${match.params.id}`);
+      setProducts(data);
+        console.log(`Hello: ${products}`)
+    };
+    fetchProducts();
+  }, [match.params.id, products]);
   return (
     <>
       <div>SingleProductName</div>
