@@ -43,6 +43,10 @@ app.get("/api/config", (req, res) => {
 app.get("/api/products", (req, res) => {
   res.json(products);
 });
+app.get("/api/products/:id", (req, res) => {
+	const product = products.find((p) => p._id === req.params.id)
+	res.json(product);
+  });
 app.get("/apiFun", (req, res) => {
   res.send("API FUN");
   var adminUser = req.params.apiFun;

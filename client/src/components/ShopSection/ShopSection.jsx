@@ -1,6 +1,8 @@
 import React from "react";
 import Pagination from "./pagination";
+import ProductCard from "./ProductCard";
 // import PropTypes from 'prop-types'
+
 
 function ShopSection() {
   return (
@@ -8,6 +10,7 @@ function ShopSection() {
     <>
       <div>ShopSection</div>
       <Pagination />
+      <ProductCard />
     </>
   );
 }
