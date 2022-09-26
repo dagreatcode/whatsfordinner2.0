@@ -56,9 +56,13 @@ export default function Home() {
           {foods.length ? (
             foods.slice(0, 5).map((food) => {
               return (
-                <tr key={food.id}>
-                  <td>{food.recipe}</td>
-                </tr>
+                <table key={food.id}>
+                  <tbody>
+                    <tr>
+                      <td> {food.recipe}</td>
+                    </tr>
+                  </tbody>
+                </table>
               );
             })
           ) : (
