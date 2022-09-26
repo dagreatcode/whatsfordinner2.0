@@ -1,5 +1,5 @@
 const products = [
-{
+  {
     _id: "1",
     name: "How to Cook better!!",
     description: "Best book around",
@@ -7,8 +7,8 @@ const products = [
     countInStock: 100,
     rating: 5,
     numReviews: 4,
-},
-{
+  },
+  {
     _id: "2",
     name: "Save Money Cooking",
     description: "Just Check it Out!!",
@@ -16,5 +16,5 @@ const products = [
     countInStock: 90,
     rating: 3,
     numReviews: 17,
-}
-]
+  },
+];

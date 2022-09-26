@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import PropTypes from "prop-types";
 // import styled from 'styled-components'
 import { useSelector } from "react-redux";
+import ShopSection from "../../components/ShopSection/ShopSection";
 
 export default function Home() {
   const foods = useSelector((state) => state.dinner);
@@ -17,7 +18,7 @@ export default function Home() {
   //   margin: 0 1em;
   //   padding: 0.25em 1em;
   // `
-
+  window.scrollTo(0, 0);
   return (
     <>
       <div className="container text-center">
@@ -82,6 +83,7 @@ export default function Home() {
           )}
         </div>
       </div>
+      <ShopSection />
     </>
   );
 }

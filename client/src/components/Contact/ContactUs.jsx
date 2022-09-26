@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-function Contact() {
+// Should Look Real Nice With A Background cut in half.
+function ContactUs() {
   const [show, setsShow] = useState(true);
   const handleClose = () => {
     setsShow(!show);
@@ -75,4 +76,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default ContactUs;
