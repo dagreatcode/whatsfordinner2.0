@@ -62,24 +62,19 @@ export default function Home() {
               );
             })
           ) : (
-            <tr>
-              <th>
-                <h6>
-                  Not Found Until you{" "}
-                  <strong>
-                    <u>turn on your location</u>
-                  </strong>
-                  .<p>Where To Go?</p>
-                  <p>
-                    If This is a private Browser, the GEO Location for this page
-                    will not work.
-                  </p>
-                  A Geolocation request can only be fulfilled in a secure
-                  context.
-                  <p></p>
-                </h6>
-              </th>
-            </tr>
+            <h6>
+              Not Found Until you{" "}
+              <strong>
+                <u>turn on your location</u>
+              </strong>
+              .<p>Where To Go?</p>
+              <p>
+                If This is a private Browser, the GEO Location for this page
+                will not work.
+              </p>
+              A Geolocation request can only be fulfilled in a secure context.
+              <p></p>
+            </h6>
           )}
         </div>
       </div>

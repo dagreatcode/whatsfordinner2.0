@@ -28,8 +28,6 @@ const ProductCard = () => {
       <br/>
       {products[1].numReviews} */}
 
-
-
       {products.map((prod) => {
         return `${prod.name},
          ${prod.description}`;
