@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run prod || npm run dev",
+    "startDash": "if-env NODE_ENV=production && npm run prod || npm run devDash",
     "prod": "node server.js",
     "dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "devDash": "concurrently \"nodemon --ignore 'dashboard/*'\" \"npm run dashboard\"",
     "client": "cd client && npm run start",
     "dashboard": "cd dashboard && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "seed": "node scripts/seedDB.js",
+    "seed": "node scripts/recipeSeedDB.js",
     "heroku-postbuild": "npm run build",
     "lint": "eslint . --ext .js,.jsx"
   },

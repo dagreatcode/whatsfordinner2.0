@@ -3,6 +3,12 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const PORT2 = process.env.PORT2 || 4001;
+const PORT3 = process.env.PORT2 || 5001;
+// const db = require("../data");
+// const apiRoutes = require("./controllers/index");
+
+// app.use("/api", apiRoutes);
 const mongoose = require("mongoose");
 const products = require("./data/AllProducts");
 // const { default: connectDatabase } = require("./config/MongoDB");
@@ -59,10 +65,29 @@ app.get("/apiFun", (req, res) => {
   res.end();
 });
 
+// app.get("/api/all", (req, res) => {
+//   db.user.find({})
+//     // .populate("user")
+//     .then((foundUsers) => {
+//       res.json(foundUsers);
+//     });
+// });
+
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
+// For the Database
 app.listen(PORT, function () {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+  console.log(`🌎 ==> API server now on port: ${PORT} http://localhost:${PORT}`);
+});
+
+// For Conversation and socket.io
+app.listen(PORT2, function () {
+  console.log(`🌎 ==> API server now on port: ${PORT2} http://localhost:${PORT2}`);
+});
+
+// For the Dashboard
+app.listen(PORT3, function () {
+  console.log(`🌎 ==> API server now on port: ${PORT3} http://localhost:${PORT3}`);
 });
