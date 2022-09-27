@@ -21,11 +21,11 @@ export function getDinner() {
     return axios
       .request(options)
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         dispatch({ type: GET_DINNER, payload: response.data });
       })
       .catch(function (error) {
-        console.error(error);
+        // console.error(error);
         dispatch({ type: SET_ERROR, payload: error.message });
       });
   };

@@ -38,7 +38,8 @@ function App() {
     // CleanUp Function
     return () => {
       //Remove
-      console.log("remove");
+      console.log("clean up")
+      
     };
   }, [dispatch]);
 
