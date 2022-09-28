@@ -9,8 +9,8 @@ function ShopSection() {
     // Place All Products/Books Here with .map() in cards... DRY Code.
     <>
       <div>ShopSection</div>
-      <Pagination />
       <ProductCard />
+      <Pagination />
     </>
   );
 }
