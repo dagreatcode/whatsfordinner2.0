@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Cart = () => {
   return (
@@ -8,8 +8,9 @@ const Cart = () => {
       {/* Takes you to shipping */}
       <h6>Continue Shopping</h6>
       <h6>Check Out</h6>
+      {/* First Login, then takes you to shipping*/}
     </>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;

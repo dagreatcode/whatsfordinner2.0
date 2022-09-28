@@ -29,7 +29,7 @@ function SingleProduct({match}) {
       <div>Reviewed Date</div>
       <div>Review Comment</div>
       {/* Add a Review if logged in */}
-      <button>Submit</button>
+      <button>Add To Cart</button>
     </>
   );
 }
