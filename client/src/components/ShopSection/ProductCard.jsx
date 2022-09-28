@@ -22,35 +22,21 @@ const ProductCard = () => {
       })} 
       `${prod.name},
          ${prod.description}`*/}
-
+      <h1>ProductCard</h1>
       <div className="card" style={{ width: "18rem" }}>
         {products.map((prod) => (
-          <div>
+          <div key={prod._id}>
             <img src="..." className="card-img-top" alt="..." />
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
+              <h5 className="card-title">{prod.name}</h5>
+              <p className="card-text">{prod.description}</p>
               {/* Use .map() to pull all products by 12 */}
-              <h1>{prod.name}</h1>
-    
-              <div>SingleProductName</div>
-              <div>{prod.description}</div>
               {/* Table */}
-              <div>Product Price</div>
-              <div>Product Status: Sold Out</div>
+              <div>Product Price: {prod.price}</div>
+              <div>Product Status: {prod.countInStock}</div>
               {/* <Ratings /> */}
-
-              {/* Reviews if reviews */}
-              <div>Product Reviews</div>
-              <div>Reviewer Name</div>
-              <div>Reviewer Ratings</div>
-              <div>Reviewed Date</div>
-              <div>Review Comment</div>
               <Link to="/" className="btn btn-primary">
-                Go somewhere
+                Check out Product
               </Link>
             </div>
           </div>
