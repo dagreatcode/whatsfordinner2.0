@@ -39,7 +39,10 @@ function App() {
     return () => {
       //Remove
       console.log("clean up")
-      
+      // dispatch().cancel()
+      // dispatch.abort()
+      // dispatch.exit()
+      // dispatch.stop()
     };
   }, [dispatch]);
 

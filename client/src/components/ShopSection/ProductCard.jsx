@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
+// We going to the home page!!! with .map()(0,12) length
 const ProductCard = () => {
   const [products, setProducts] = useState([]);
 
@@ -14,24 +16,32 @@ const ProductCard = () => {
   }, [products]);
   return (
     <>
-      {/* Use .map() to pull all products by 12 */}
-      <h1>Product Card</h1>
-      {/* {products[1].name}
-      <br/>
-      {products[1].description}
-      <br/>
-      {products[1].price}
-      <br/>
-      {products[1].countInStock}
-      <br/>
-      {products[1].ratings}
-      <br/>
-      {products[1].numReviews} */}
-
-      {products.map((prod) => {
+      {/* {products.map((prod) => {
         return `${prod.name},
          ${prod.description}`;
-      })}
+      })} 
+      `${prod.name},
+         ${prod.description}`*/}
+      <h1>ProductCard</h1>
+      <div className="card" style={{ width: "18rem" }}>
+        {products.map((prod) => (
+          <div key={prod._id}>
+            <img src="..." className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">{prod.name}</h5>
+              <p className="card-text">{prod.description}</p>
+              {/* Use .map() to pull all products by 12 */}
+              {/* Table */}
+              <div>Product Price: {prod.price}</div>
+              <div>Product Status: {prod.countInStock}</div>
+              {/* <Ratings /> */}
+              <Link to="/" className="btn btn-primary">
+                Check out Product
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 };

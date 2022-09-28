@@ -14,7 +14,7 @@ const initialState = {
 
 function rootReducer(state = initialState, action) {
   if (action.type === GET_DINNER) {
-    console.log(action.payload);
+    // console.log(action.payload);
     return Object.assign({}, state, {
       dinner: action.payload,
       loading: false,
