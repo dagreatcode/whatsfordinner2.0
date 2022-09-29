@@ -15,7 +15,6 @@ const recipeSchema = new Schema({
   href: {
     type: String,
     default: "",
-    unique: true,
   },
 
   // Not all ingredients, just the recommended ingredients from scraped web pages
