@@ -7,7 +7,7 @@ const PORT2 = process.env.PORT2 || 4001;
 const PORT3 = process.env.PORT2 || 5001;
 // const db = require("../data");
 // const apiRoutes = require("./controllers/index");
-const db = require("./models")
+// const db = require("./models")
 // app.use("/api", apiRoutes);
 const mongoose = require("mongoose");
 const products = require("./data/AllProducts");
@@ -73,11 +73,11 @@ app.get("/apiFun", (req, res) => {
 //     });
 // });
 
-app.post("/", (req, res) => {
-  db.User.create(req.body).then((newUser) => {
-    res.json(newUser);
-  });
-});
+// app.post("/", (req, res) => {
+//   db.User.create(req.body).then((newUser) => {
+//     res.json(newUser);
+//   });
+// });
 
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
