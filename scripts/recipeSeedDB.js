@@ -1171,7 +1171,7 @@ const recipeSeed = [
 db.Recipe.deleteOne({})
   .then(() => db.Recipe.collection.insertMany(recipeSeed))
   .then((data) => {
-    console.log(data + " records inserted!");
+    console.log(data.result.n + " records inserted!");
     process.exit(0);
   })
   .catch((err) => {
