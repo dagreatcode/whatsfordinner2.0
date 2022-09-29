@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 
 // Resource Driven API //
 
-router.get("/test", (req, res) => {
+router.get("/user", (req, res) => {
   db.User.find({})
     // .populate("user")
     .then((foundUsers) => {

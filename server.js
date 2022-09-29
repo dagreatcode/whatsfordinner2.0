@@ -12,9 +12,9 @@ const PORT3 = process.env.PORT2 || 5001;
 const mongoose = require("mongoose");
 const products = require("./data/AllProducts");
 // const { default: connectDatabase } = require("./config/MongoDB");
-// const routes = require("./routes");
+const routes = require("./routes");
 // // All Routes
-// app.use(routes);
+app.use(routes);
 // (For Heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
