@@ -31,10 +31,10 @@ const ProductCard = () => {
               className="card"
               style={{
                 width: "18rem",
-                alignItems: "center;",
-                display: "flex;",
-                flexDirection: "row;",
-                textAlign: "center;",
+                alignItems: "center",
+                display: "flex",
+                flexDirection: "row",
+                textAlign: "center",
               }}
             >
               <img src="..." className="card-img-top" alt="..." />
