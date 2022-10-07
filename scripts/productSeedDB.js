@@ -9,13 +9,13 @@ mongoose.connect(
 
 const productSeed = [
   {
-    name: "Let's cook for All",
+    name: "asd",
     image: "./images",
-    description: "Just cook better food",
-    rating: 5,
-    numReviews: 9,
-    price: 100,
-    countInStock: 500,
+    description: "dfa",
+    rating: 2,
+    numReviews: 4,
+    price: 213,
+    countInStock: 432,
   },
   {
     name: "What not to eat in 2022",
