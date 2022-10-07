@@ -9,9 +9,9 @@ mongoose.connect(
 
 const productSeed = [
   {
-    name: "asd",
-    image: "./images",
-    description: "dfa",
+    name: "Something simple",
+    image: "./images/1",
+    description: "First book",
     rating: 2,
     numReviews: 4,
     price: 213,
@@ -19,7 +19,7 @@ const productSeed = [
   },
   {
     name: "What not to eat in 2022",
-    image: "./images",
+    image: "./images/2",
     description: "Best Product around to date",
     rating: 3,
     numReviews: 2,
@@ -28,7 +28,7 @@ const productSeed = [
   },
   {
     name: "How to Cook better!!",
-    image: "./images",
+    image: "./images/3",
     description: "Best Product around",
     rating: 5,
     numReviews: 4,
@@ -37,13 +37,13 @@ const productSeed = [
   },
   {
     name: "Save Money Cooking",
-    image: "./images",
+    image: "./images/4",
     description: "Just Check it Out!!",
     rating: 3,
     numReviews: 17,
     price: 80,
     countInStock: 90,
-  },
+  }
 ];
 
 db.Product.deleteOne({})
