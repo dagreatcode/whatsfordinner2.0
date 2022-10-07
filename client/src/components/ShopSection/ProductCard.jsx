@@ -8,7 +8,7 @@ const ProductCard = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const { data } = await axios.get("/api/products");
+      const { data } = await axios.get("/api/all-products");
       setProducts(data);
       //   console.log(`Hello: ${products}`)
     };
@@ -16,12 +16,6 @@ const ProductCard = () => {
   }, [products]);
   return (
     <>
-      {/* {products.map((prod) => {
-        return `${prod.name},
-         ${prod.description}`;
-      })} 
-      `${prod.name},
-         ${prod.description}`*/}
       <h1>ProductCard</h1>
       <div className="container" style={{}}>
         <div className="row">

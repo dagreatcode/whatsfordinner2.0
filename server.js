@@ -5,12 +5,12 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const PORT2 = process.env.PORT2 || 4001;
 const PORT3 = process.env.PORT2 || 5001;
-// const db = require("../data");
+const db = require("./models");
 // const apiRoutes = require("./controllers/index");
 
 // app.use("/api", apiRoutes);
 const mongoose = require("mongoose");
-const products = require("./data/AllProducts");
+// const products = require("./data/AllProducts");
 // const { default: connectDatabase } = require("./config/MongoDB");
 // const routes = require("./routes");
 // // All Routes
@@ -51,13 +51,13 @@ app.get("/api/config", (req, res) => {
     success: true,
   });
 });
-app.get("/api/products", (req, res) => {
-  res.json(products);
-});
-app.get("/api/products/:id", (req, res) => {
-  const product = products.find((p) => p._id === req.params.id);
-  res.json(product);
-});
+// app.get("/api/products", (req, res) => {
+//   res.json(products);
+// });
+// app.get("/api/products/:id", (req, res) => {
+//   const product = products.find((p) => p._id === req.params.id);
+//   res.json(product);
+// });
 app.get("/apiFun", (req, res) => {
   res.send("API FUN");
   var adminUser = req.params.apiFun;
@@ -65,14 +65,17 @@ app.get("/apiFun", (req, res) => {
   res.end();
 });
 
-// app.get("/api/all", (req, res) => {
-//   db.user.find({})
-//     // .populate("user")
-//     .then((foundUsers) => {
-//       res.json(foundUsers);
-//     });
-// });
-
+app.get("/api/all-products", (req, res) => {
+  db.Product.find({})
+    // .populate("user")
+    .then((foundProducts) => {
+      res.json(foundProducts);
+    });
+});
+app.get("/api/all-products/:id", (req, res) => {
+  const product = products.find((p) => p._id === req.params.id);
+  res.json(product);
+});
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });

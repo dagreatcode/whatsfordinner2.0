@@ -54,17 +54,15 @@ export default function Home() {
           </div>
           <h2>Here are a few Diet Recipes</h2>
           {foods.length ? (
-            foods.slice(0, 5).map((food) => {
-              return (
-                <table key={food.id}>
-                  <tbody>
-                    <tr>
-                      <td> {food.recipe}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              );
-            })
+            foods.slice(0, 5).map((food) => (
+              <table key={food.id}>
+                <tbody>
+                  <tr>
+                    <td> {food.recipe}</td>
+                  </tr>
+                </tbody>
+              </table>
+            ))
           ) : (
             <h6>
               Not Found Until you{" "}
@@ -76,8 +74,9 @@ export default function Home() {
                 If This is a private Browser, the GEO Location for this page
                 will not work.
               </p>
-              A Geolocation request can only be fulfilled in a secure context.
-              <p></p>
+              <p>
+                A Geolocation request can only be fulfilled in a secure context.
+              </p>
             </h6>
           )}
         </div>
