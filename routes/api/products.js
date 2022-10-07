@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const db = require("../models");
+// const productsController = require("../../controllers/ProductController");
 
 router.get("/api/all-products", (req, res) => {
   db.Product.find({})

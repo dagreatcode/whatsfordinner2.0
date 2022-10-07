@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
 // TODO: Add routes to add images to mongoDB for user after sign in.
 
 // Resource Driven API //

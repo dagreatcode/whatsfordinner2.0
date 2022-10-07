@@ -34,16 +34,13 @@ function App() {
 
   useEffect(() => {
     //Fetch Data
-    dispatch(getDinner());
+    const timeout = setTimeout(() => dispatch(getDinner()));
     // CleanUp Function
     return () => {
-      //Remove
-      console.log("clean up")
-      // dispatch().cancel()
-      // dispatch.abort()
-      // dispatch.exit()
-      // dispatch.stop()
+      console.log("Clean Up Time");
+      clearTimeout(timeout);
     };
+    // return () => {};
   }, [dispatch]);
 
   if (error) {
