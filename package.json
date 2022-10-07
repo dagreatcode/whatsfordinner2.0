@@ -16,6 +16,7 @@
     "build": "cd client && npm run build",
     "seedRecipe": "node scripts/recipeSeedDB.js",
     "seedProduct": "node scripts/productSeedDB.js",
+    "seedBook": "node scripts/recipeBookSeedDB.js",
     "heroku-postbuild": "npm run build",
     "lint": "eslint . --ext .js,.jsx"
   },
