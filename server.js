@@ -51,20 +51,12 @@ app.get("/api/config", (req, res) => {
     success: true,
   });
 });
-// app.get("/api/products", (req, res) => {
-//   res.json(products);
-// });
-// app.get("/api/products/:id", (req, res) => {
-//   const product = products.find((p) => p._id === req.params.id);
-//   res.json(product);
-// });
 app.get("/apiFun", (req, res) => {
   res.send("API FUN");
   var adminUser = req.params.apiFun;
   console.log(adminUser);
   res.end();
 });
-
 app.get("/api/all-products", (req, res) => {
   db.Product.find({})
     // .populate("user")
@@ -76,6 +68,18 @@ app.get("/api/all-products/:id", (req, res) => {
   const product = products.find((p) => p._id === req.params.id);
   res.json(product);
 });
+app.get("/api/allBooks", (req, res) => {
+  db.Product.find({})
+    // .populate("user")
+    .then((foundBooks) => {
+      res.json(foundBooks);
+    });
+});
+app.get("/api/allBooks/:id", (req, res) => {
+  const book = books.find((p) => p._id === req.params.id);
+  res.json(book);
+});
+
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
