@@ -31,8 +31,12 @@ export default function Pagination() {
           </Link>
         </li>
       </ul> */}
-      <nav aria-label="Page navigation example" style={{  /* Center horizontally*/
-  margin: "0 auto;"}}>
+      <nav
+        aria-label="Page navigation example"
+        style={{
+          /* Center horizontally*/ margin: "0 auto"
+        }}
+      >
         <ul className="pagination">
           <li className="page-item">
             <Link className="page-link" to="/" aria-label="Previous">
