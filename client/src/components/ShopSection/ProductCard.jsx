@@ -17,7 +17,7 @@ const ProductCard = () => {
   return (
     <>
       <h1>ProductCard</h1>
-      <div className="container" style={{}}>
+      <div className="container" style={{alignText:"center"}}>
         <div className="row">
           {products.map((prod) => (
             <div
@@ -31,7 +31,7 @@ const ProductCard = () => {
                 textAlign: "center",
               }}
             >
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={prod.image} className="card-img-top" alt={prod.name} />
               <div className="card-body">
                 <h5 className="card-title">{prod.name}</h5>
                 <p className="card-text">{prod.description}</p>
