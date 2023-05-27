@@ -56,21 +56,21 @@ export default function Home() {
           {foods.length ? (
             foods.slice(0, 5).map((food) => (
               <dl key={food.id}>
-               
-               
-                  <img
-                    style={{
-                      height: "300px",
-                      width: "300px",
-                      textAlign: "center",
-                    }}
-                    src={food.image}
-                    alt="food thumbnail"
-                  />
-              
+                <img
+                  style={{
+                    height: "300px",
+                    width: "300px",
+                    textAlign: "center",
+                  }}
+                  src={food.image}
+                  alt="food thumbnail"
+                />
+
                 <dt>{food.recipe}</dt>
-                <dd>{food.ingredient_1}, {food.ingredient_2} {food.ingredient_3},{" "}</dd>
-             
+                <dd>
+                  {food.ingredient_1}, {food.ingredient_2} {food.ingredient_3},{" "}
+                </dd>
+
                 <br />
               </dl>
             ))
