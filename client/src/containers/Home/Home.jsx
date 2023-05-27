@@ -78,16 +78,8 @@ export default function Home() {
             <h6>
               Not Found Until you{" "}
               <strong>
-                <u>turn on your location</u>
+                <u>turn on your Wifi</u>
               </strong>
-              .<p>Where To Go?</p>
-              <p>
-                If This is a private Browser, the GEO Location for this page
-                will not work.
-              </p>
-              <p>
-                A Geolocation request can only be fulfilled in a secure context.
-              </p>
             </h6>
           )}
         </div>
