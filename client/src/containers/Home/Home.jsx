@@ -54,17 +54,25 @@ export default function Home() {
           </div>
           <h2>Here are a few Diet Recipes</h2>
           {foods.length ? (
-            foods.slice(0, 3).map((food) => (
-              <table key={food.id}>
-                <tbody>
-                {food.recipe}
-                  <tr>
-                    <td><img style={{height:"300px", width:"300px", textAlign:"center"}} src={food.image} alt="food thumbnail"/></td>
-                  </tr>
-                  {food.ingredient_1} {food.ingredient_2} {food.ingredient_3}
-                </tbody>
-                <br/>
-              </table>
+            foods.slice(0, 5).map((food) => (
+              <dl key={food.id}>
+               
+               
+                  <img
+                    style={{
+                      height: "300px",
+                      width: "300px",
+                      textAlign: "center",
+                    }}
+                    src={food.image}
+                    alt="food thumbnail"
+                  />
+              
+                <dt>{food.recipe}</dt>
+                <dd>{food.ingredient_1}, {food.ingredient_2} {food.ingredient_3},{" "}</dd>
+             
+                <br />
+              </dl>
             ))
           ) : (
             <h6>
