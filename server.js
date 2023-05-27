@@ -57,6 +57,8 @@ app.get("/apiFun", (req, res) => {
   console.log(adminUser);
   res.end();
 });
+
+//FIXME: at promiseOrCallback. Try catch or then catch ASAP
 app.get("/api/all-products", (req, res) => {
   db.Product.find({})
     // .populate("user")
