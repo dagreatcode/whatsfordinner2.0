@@ -19,6 +19,7 @@ const ProductCard = () => {
       <h1>ProductCard</h1>
       <div className="container" style={{alignText:"center"}}>
         <div className="row">
+          <div className="col-sm-12">
           {products.map((prod) => (
             <div
               key={prod._id}
@@ -46,6 +47,7 @@ const ProductCard = () => {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </>
