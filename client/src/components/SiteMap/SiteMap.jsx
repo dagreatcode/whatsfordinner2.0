@@ -7,7 +7,7 @@ function SiteMap() {
       <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5638386406159819"
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></script>
     </>
   );

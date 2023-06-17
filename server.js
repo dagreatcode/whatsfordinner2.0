@@ -6,15 +6,18 @@ const PORT = process.env.PORT || 3001;
 const PORT2 = process.env.PORT2 || 4001;
 const PORT3 = process.env.PORT2 || 5001;
 const db = require("./models");
+const connectDatabase = require("./config/MongoDB.js");
 // const apiRoutes = require("./controllers/index");
 
+//FIXME: Clear out the server into other files
+
 // app.use("/api", apiRoutes);
-const mongoose = require("mongoose");
 // const products = require("./data/AllProducts");
 // const { default: connectDatabase } = require("./config/MongoDB");
 // const routes = require("./routes");
-// // All Routes
+
 // app.use(routes);
+
 // (For Heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -23,29 +26,10 @@ if (process.env.NODE_ENV === "production") {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// connectDatabase();
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/whatsForDinner_db",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    // useCreateIndex: true,
-    // useFindAndModify: false,
-    // onAfterSetupMiddleware: true,
-    // onBeforeSetupMiddleware: true,
-  }
-);
+connectDatabase();
 
-const connection = mongoose.connection;
-
-connection.on("connected", () => {
-  console.log("Mongoose successfully connected.");
-});
-
-connection.on("error", (err) => {
-  console.log("Mongoose connection error: ", err);
-});
-
+// // All Routes 
+//TODO: Add these to another js file
 app.get("/api/config", (req, res) => {
   res.json({
     success: true,
@@ -57,29 +41,37 @@ app.get("/apiFun", (req, res) => {
   console.log(adminUser);
   res.end();
 });
-
-//FIXME: at promiseOrCallback. Try catch or then catch ASAP
-app.get("/api/all-products", (req, res) => {
-  db.Product.find({})
-    // .populate("user")
-    .then((foundProducts) => {
-      res.json(foundProducts);
-    });
+app.get("/api/all-products", async (req, res) => {
+  try {
+    const findProd = await db.Product.find({});
+    res.json(findProd);
+  } catch (err) {
+    console.log(err.message);
+  }
 });
-app.get("/api/all-products/:id", (req, res) => {
-  const product = products.find((p) => p._id === req.params.id);
-  res.json(product);
+app.get("/api/all-products/:id", async (req, res) => {
+  try {
+    const product = await products.find((p) => p._id === req.params.id);
+    res.json(product);
+  } catch (err) {
+    console.log(err.message);
+  }
 });
-app.get("/api/allBooks", (req, res) => {
-  db.Product.find({})
-    // .populate("user")
-    .then((foundBooks) => {
-      res.json(foundBooks);
-    });
+app.get("/api/allBooks", async (req, res) => {
+  try {
+    const findBook = await db.Product.find({});
+    res.json(findBook);
+  } catch (err) {
+    console.log(err.message);
+  }
 });
-app.get("/api/allBooks/:id", (req, res) => {
-  const book = books.find((p) => p._id === req.params.id);
-  res.json(book);
+app.get("/api/allBooks/:id", async (req, res) => {
+  try {
+    const book = await books.find((p) => p._id === req.params.id);
+    res.json(book);
+  } catch (err) {
+    console.log(err.message);
+  }
 });
 
 app.get("*", function (req, res) {
@@ -88,15 +80,19 @@ app.get("*", function (req, res) {
 
 // For the Database
 app.listen(PORT, function () {
-  console.log(`🌎 ==> API server now on port: ${PORT} http://localhost:${PORT}`);
+  console.log(
+    `🌎 ==> API server now on port: ${PORT} http://localhost:${PORT}`
+  );
 });
-
 // For Conversation and socket.io
 app.listen(PORT2, function () {
-  console.log(`🌎 ==> API server now on port: ${PORT2} http://localhost:${PORT2}`);
+  console.log(
+    `🎯 ==> API server now on port: ${PORT2} http://localhost:${PORT2}`
+  );
 });
-
 // For the Dashboard
 app.listen(PORT3, function () {
-  console.log(`🌎 ==> API server now on port: ${PORT3} http://localhost:${PORT3}`);
+  console.log(
+    `🫀  ==> API server now on port: ${PORT3} http://localhost:${PORT3}`
+  );
 });
