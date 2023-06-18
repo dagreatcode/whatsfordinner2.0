@@ -37,7 +37,7 @@ function App() {
     const timeout = setTimeout(() => dispatch(getDinner()));
     // CleanUp Function
     return () => {
-      console.log("Clean Up Time");
+      // console.log("Clean Up Time");
       clearTimeout(timeout);
     };
     // return () => {};

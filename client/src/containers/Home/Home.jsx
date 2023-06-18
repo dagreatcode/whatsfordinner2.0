@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import PropTypes from "prop-types";
-// import styled from 'styled-components'
+// import styled from "styled-components";
 import { useSelector } from "react-redux";
 import ShopSection from "../../components/ShopSection/ShopSection";
 
@@ -10,19 +10,19 @@ export default function Home() {
 
   const [message, setMessage] = useState("Welcome Food People");
 
-  //   const Button = styled.button`
+  // const Button = styled.button`
   //   background: transparent;
   //   border-radius: 3px;
   //   border: 2px solid black;
   //   color: rgb(4, 49, 12);
   //   margin: 0 1em;
   //   padding: 0.25em 1em;
-  // `
+  // `;
   window.scrollTo(0, 0);
   return (
     <>
       <div className="container text-center">
-        <div className="row">
+        <div className="row Jumbotron jumbotron-fluid">
           <h1
             style={{
               // height: 500,
@@ -31,7 +31,7 @@ export default function Home() {
               // paddingTop: 120,
               textAlign: "center",
             }}
-            // className="jumbotron"
+            className="display-4"
           >
             {message}
           </h1>
@@ -52,9 +52,10 @@ export default function Home() {
           <div className="col-sm-4">
             <h1>-</h1>
           </div>
+          {/* {console.log(foods)} */}
           <h2>Here are a few Diet Recipes</h2>
           {foods.length ? (
-            foods.slice(0, 5).map((food) => (
+            foods.slice(0, 200).map((food) => (
               <dl key={food.id}>
                 <img
                   style={{
@@ -65,12 +66,12 @@ export default function Home() {
                   src={food.image}
                   alt="food thumbnail"
                 />
-
                 <dt>{food.recipe}</dt>
                 <dd>
-                  {food.ingredient_1}, {food.ingredient_2} {food.ingredient_3},{" "}
+                  {food.ingredient_1}, {food.ingredient_2}, {food.ingredient_3},{" "}
+                  {food.ingredient_4}, {food.ingredient_5} {food.ingredient_6},{" "}
+                  {food.ingredient_7}, {food.ingredient_8}{" "}
                 </dd>
-
                 <br />
               </dl>
             ))

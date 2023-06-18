@@ -28,7 +28,7 @@ app.use(express.json());
 
 connectDatabase();
 
-// // All Routes 
+// // All API Routes 
 //TODO: Add these to another js file
 app.get("/api/config", (req, res) => {
   res.json({
