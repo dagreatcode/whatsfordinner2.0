@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
 
 function SideNav() {
   return (
-    <div>SideNav</div>
-  )
+    <>
+      <div>SideNav</div>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5638386406159819"
+        crossOrigin="anonymous"
+      ></script>
+    </>
+  );
 }
 
-export default SideNav
+export default SideNav;
