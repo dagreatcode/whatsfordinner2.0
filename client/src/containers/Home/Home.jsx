@@ -68,9 +68,9 @@ export default function Home() {
                 />
                 <dt>{food.recipe}</dt>
                 <dd>
-                  {food.ingredient_1}, {food.ingredient_2}, {food.ingredient_3},{" "}
-                  {food.ingredient_4}, {food.ingredient_5}, {food.ingredient_6},{" "}
-                  {food.ingredient_7}, {food.ingredient_8}, {food.ingredient_9}, {food.ingredient_10},
+                  {food.measurement_1} {'-'} {food.ingredient_1}, {food.measurement_2} {'-'} {food.ingredient_2}, {food.measurement_3} {'-'} {food.ingredient_3},{" "}
+                  {food.measurement_4} {'-'} {food.ingredient_4}, {food.measurement_5} {'-'} {food.ingredient_5}, {food.measurement_6} {'-'} {food.ingredient_6},{" "}
+                  {food.measurement_7} {'-'} {food.ingredient_7}, {food.measurement_8} {'-'} {food.ingredient_8}, {food.measurement_9}  {food.ingredient_9}, {food.measurement_10} {'-'} {food.ingredient_10},
                   {console.log(food)}
                 </dd>
                 <br />
