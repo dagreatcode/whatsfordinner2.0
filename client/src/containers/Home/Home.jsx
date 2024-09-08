@@ -69,8 +69,17 @@ export default function Home() {
                 <dt>{food.recipe}</dt>
                 <dd>
                   {food.ingredient_1}, {food.ingredient_2}, {food.ingredient_3},{" "}
-                  {food.ingredient_4}, {food.ingredient_5} {food.ingredient_6},{" "}
-                  {food.ingredient_7}, {food.ingredient_8}{" "}
+                  {food.ingredient_4}, {food.ingredient_5}, {food.ingredient_6},{" "}
+                  {food.ingredient_7}, {food.ingredient_8}, {food.ingredient_9}, {food.ingredient_10},
+                  {console.log(food)}
+                </dd>
+                <br />
+                <dt>{food.difficulty} {food.category.category}</dt>
+                <dd>
+                  {food.directions_step_1}, {food.directions_step_2}, {food.directions_step_3},{" "}
+                  {food.directions_step_4}, {food.directions_step_5}, {food.directions_step_6},{" "}
+                  {food.directions_step_7}, {food.directions_step_8}, {food.directions_step_9}, {food.directions_step_10},
+                  <h6>Cook Time In Minutes</h6> {food.cook_time_in_minutes}
                 </dd>
                 <br />
               </dl>
