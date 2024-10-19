@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import styles from "./ShopSection.module.css"; // Import the CSS Module
+// import Rating from "./Ratings"; // Import Rating component
 
-// We going to the home page!!! with .map()(0,12) length
 const ProductCard = () => {
   const [products, setProducts] = useState([]);
 
@@ -10,43 +11,40 @@ const ProductCard = () => {
     const fetchProducts = async () => {
       const { data } = await axios.get("/api/all-products");
       setProducts(data);
-      //   console.log(`Hello: ${products}`)
     };
     fetchProducts();
-  }, [products]);
+  }, []);
+
   return (
     <>
       <h1>ProductCard</h1>
-      <div className="container" style={{alignText:"center"}}>
+      <div className={styles.container}>
         <div className="row">
-          <div className="col-sm-12">
-          {products.map((prod) => (
-            <div
-              key={prod._id}
-              className="card"
-              style={{
-                width: "18rem",
-                alignItems: "center",
-                display: "flex",
-                flexDirection: "row",
-                textAlign: "center",
-              }}
-            >
-              <img src={prod.image} className="card-img-top" alt={prod.name} />
-              <div className="card-body">
-                <h5 className="card-title">{prod.name}</h5>
-                <p className="card-text">{prod.description}</p>
-                {/* Use .map() to pull all products by 12 */}
-                {/* Table */}
-                <div>Product Price: {prod.price}</div>
-                <div>Product Status: {prod.countInStock}</div>
-                {/* <Ratings /> */}
-                <Link to="/" className="btn btn-primary">
-                  Check out Product
-                </Link>
+          <div className="col-sm-12 d-flex flex-wrap justify-content-center">
+            {products.map((prod) => (
+              <div key={prod._id} className={styles.card}>
+                <img
+                  src={prod.image}
+                  className="card-img-top"
+                  alt={prod.name}
+                />
+                <div className={styles.cardBody}>
+                  <h5 className="card-title">{prod.name}</h5>
+                  <p className="card-text">{prod.description}</p>
+                  <div>Product Price: {prod.price}</div>
+                  <div>Product Status: {prod.countInStock}</div>
+                  <Link to="/" className="btn btn-primary">
+                    Check out Product
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+            {/* Adding more blank cards */}
+            {[...Array(4)].map((_, index) => (
+              <div key={index} className={styles.blankCard}>
+                <p>More Products Coming Soon!</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

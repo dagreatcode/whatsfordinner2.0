@@ -9,6 +9,7 @@ const Cart = () => {
       <h6>Continue Shopping</h6>
       <h6>Check Out</h6>
       {/* First Login, then takes you to shipping*/}
+      <button className="btn btn-primary">Proceed To Checkout</button>
     </>
   );
 };

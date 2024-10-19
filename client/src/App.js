@@ -21,6 +21,7 @@ import SiteMap from "./components/SiteMap/SiteMap";
 import SideNav from "./components/SideNav/SideNav";
 import CountDown from "./components/CountDown/CountDown";
 import Loading from "./components/Loading/Loading";
+import Mom from "./containers/CookBooks/Moms/Moms";
 // import Reload from "./components/Reload/Reload"
 // import NotFound from "./containers/NotFound/NotFound";
 import { useDispatch, useSelector } from "react-redux";
@@ -72,6 +73,7 @@ function App() {
             <Route path="/shipping" element={<Shipping />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/PlaceOrder" element={<PlaceOrder />} />
+            <Route path="/Mom" element={<Mom />} />
             <Route path="/order" element={<Order />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
